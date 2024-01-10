@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "images/uploads"
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "hlavni" }
+      - { label: "Tags", name: "tags", widget: "hidden", default: "blog" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Featured Image",
+          name: "foto",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Perex", name: "perex", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
